@@ -1,0 +1,111 @@
+1)What is `NPM` - Package Manager . it is not Node package manager .npm is an  package manager we can customise it whatever name we can give
+2)What is `Parcel/Webpack`? Why do we need it? - Parcel is an webpack it will helps our code to get ready for Production ready  - it will help to -
+-Bundle the code
+-Minfication
+Caching while Development
+-Cleans the code
+- Image Compression 
+- Hot Module Reloading
+3)What is `.parcel-cache`
+     - caches the parcel and this file is automatically created
+4)What is `npx` ? - creates React Application
+5) `dependencies` vs `devDependencies
+         - Dependencies helpful to create application 
+         - Dev dependecies helpful in development time
+6)TreeShaking -Removal of Dead code(dead code Elimination)
+            - when we import and export modules unused code floating around . we need to eliminate that dead(unused) code while build process.
+             - tools like webpack detect and mark it as unused module but won't remove the code. webpack relies on Minifiers for removal of dead code 
+             - one minifier is Uglifierjs plugin 
+             -Utilizing the tree shaking and dead code elimination can significantly reduce the code size we have in our application. The less code we send over the wire the more performant the application will be.
+7) Hot Module replacement - add,exchange ,replacing module while application is still running   without full reload.
+                           -Retain application state which is lost during a full reload.
+                           -Save valuable development time by only updating what's changed.
+                           -Instantly update the browser when modifications are made to CSS/JS in the source code, which is almost comparable to changing styles directly in the browser's dev tools.
+                           
+8)e 5 superpowers of Parcel 
+             -REFER ANSWER 2
+9)What is `.gitignore`? What should we add and not add into it?
+         GITIGNORE 
+                   - text files which tells which tells git which files or folders to ignore in a project.
+                   -To create a local .gitignore file, create a text file and name it .gitignore.
+                   -Each new line should list an additional file or folder that you want Git to ignore.
+                   * is used as a wildcard match
+/ is used to ignore pathnames relative to the .gitignore file
+# is used to add comments to a .gitignore file
+10) difference between `package.json` and `package-lock.json`
+       package.json - it has all packages along with its versions 
+       package-lock.json - same package version gets locked . so whenever we run the same project in different machine it will refer the same version by refering pakage-lock.json
+       
+11)Why should I not modify `package-lock.json`? - because version is locked so the same version we can use if we modify it won't replcate the same 
+12)- What is `node_modules` ? Is it a good idea to push that on git? - 
+               -Node modules are produced when we install webpacks and or npm install any dependency 
+               - it is file which is created for the dependency we created for running the application 
+               - we should not push nodemdoules in git because it is huge and it takes lot of memory 
+                instead whatever dependency we created in files gets created in nodemodlues but names gets registered in pkg so with pkg manager we can refer and create node modules locally.
+13)What is the `dist` folder? - o/p file 
+                              - minimized version of the source code.
+                              -The files meant for production or public use are usually located here.
+                              src/: "source" files to build and develop the project. This is where the original source files are located, before being compiled into fewer files to dist/, public/ or build/.
+
+                            dist/: "distribution", the compiled code/library, also named public/ or build/. The files meant for production or public use are usually located here.
+
+There may be a slight difference between these three:
+
+build/: is a compiled version of your src/ but not a production-ready.
+dist/: is a production-ready compiled version of your code.
+public/: usually used as the files runs on the browser. which it may be the server-side JS and also include some HTML and CSS.
+assets/: static content like images, video, audio, fonts etc.
+
+lib/: external dependencies (when included directly).
+
+test/: the project's tests scripts, mocks, etc.
+
+node_modules/: includes libraries and dependencies for JS packages, used by Npm.
+
+vendor/: includes libraries and dependencies for PHP packages, used by Composer.
+
+bin/: files that get added to your PATH when installed.
+
+     - it has all packages along with its versions 
+     package-lock.json - same package version gets locked . so whenever we run the same project in different machine it will refer the same version by refering pakage-lock.json
+    11)Why should I not modify `package-lock.json`? - because version is locked so the same version we can use if we modify it won't replcate the same 
+    12)- What is `node_modules` ? Is it a good idea to push that on git? - 
+                   -Node modules are produced when we install webapcks and or npm install any dependency 
+                   - it is file which is created for the 
+
+            
+            
+      13)browserlists` -Browserslist is a tool that allows specifying which browsers should be supported in your frontend app by specifying "queries" in a config file
+      14) D/w bundlers: vite, webpack, parcel
+         Babel is a JavaScript compiler that allows you to use new features of ECMAScript before they are implemented in browsers.
+         
+         Parcel vs. webpack
+                      Parcel is a zero configuration web application bundler that is fast and easy to use.
+
+                       webpack is a module bundler that bundles JavaScript files for usage in a browser.
+
+                       Consider Parcel if you want a fast and easy to use bundler for your web application.
+
+                       Consider webpack if you want a bundler that can bundle your JavaScript files for usage in a browser.
+                       Consider Vite if you want a lightweight IDE that is accessible from any browser.
+                       Vite is a web-based IDE that is designed to be a fast and lightweight alternative to traditional IDEs. It is a cloud-based IDE that runs on any device and is accessible from any browser.
+                   
+                   
+                   
+             15) d/w ^ caret and ~tilda 
+                  - tilda
+                      -~ freezes major and minor numbers.
+                      It is used when you're ready to accept bug-fixes in your dependency, but don't want any potentially incompatible changes.
+                      The tilde matches the most recent minor version (the middle number).
+                      ~1.2.3 will match all 1.2.x versions, but it will miss 1.3.0.
+                      Tilde (~) gives you bug fix releases
+                  -caret 
+                  -^ freezes the major number only.
+                  It is used when you're closely watching your dependencies and are ready to quickly change your code if minor release will be incompatible.
+It will update you to the most recent major version (the first number).
+^1.2.3 will match any 1.x.x release including 1.3.0, but it will hold off on 2.0.0.
+Caret (^) gives you backwards-compatible new functionality as well.
+                       
+                       
+           
+
